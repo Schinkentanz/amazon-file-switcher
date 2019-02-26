@@ -1,0 +1,35 @@
+{
+  "name": "amazon smile switcher",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "Switch from amazon.de to smile.amazon.de",
+  "homepage_url": "https://www.amazon.de/",
+  "icons": {
+    "16": "icons/icon16.png",
+    "19": "icons/icon19.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "background": {
+    "scripts": [
+      "src/bg/background.js"
+    ],
+    "persistent": true
+  },
+  "permissions": [
+    "notifications",
+    "tabs",
+    "https://www.amazon.de/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.amazon.de/*"
+      ],
+      "js": [
+        "src/inject/inject.js"
+      ]
+    }
+  ]
+}

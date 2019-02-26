@@ -1,6 +1,6 @@
 {
   "name": "amazon smile switcher",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "manifest_version": 2,
   "description": "Switch from amazon.de to smile.amazon.de",
   "homepage_url": "https://www.amazon.de/",
@@ -18,18 +18,10 @@
     "persistent": true
   },
   "permissions": [
+    "webRequest",
+    "webRequestBlocking",
     "notifications",
     "tabs",
     "https://www.amazon.de/*"
-  ],
-  "content_scripts": [
-    {
-      "matches": [
-        "https://www.amazon.de/*"
-      ],
-      "js": [
-        "src/inject/inject.js"
-      ]
-    }
   ]
 }
